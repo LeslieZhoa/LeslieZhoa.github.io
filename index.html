@@ -3,353 +3,259 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Leslie Zhao</title>
-  <meta name="author" content="Leslie Zhao">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Crucial for mobile -->
+  <meta name="author" content="xxx">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
   <style>
-    /* --- Embedded Styles for Project Section --- */
-    /* These styles are specific to fixing the layout and can be moved to your stylesheet.css if preferred */
-
-    /* Ensure base styles are consistent */
+    /* --- Base & Layout Styles --- */
     body {
-      font-family: Arial, sans-serif; /* Or match your existing font from stylesheet.css */
-      margin: 0;
-      padding: 0;
-      line-height: 1.5;
+      margin: 0; padding: 0; line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #333;
     }
 
-    table {
-      border: 0px;
-      border-spacing: 0px;
-      border-collapse: separate;
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    td {
-      vertical-align: top; /* Default alignment */
-    }
-
-    /* --- Wrapper for Project Items to Align with Content Above --- */
-    .project-content-wrapper {
-      width: 100%;
-      max-width: 800px; /* Match the max-width of the profile section */
-      margin: 0 auto; /* Center the wrapper */
-      padding-left: 2.5%; /* Match the padding of the profile text cell */
-      padding-right: 2.5%; /* Match the padding of the profile text cell */
-      box-sizing: border-box; /* Include padding in width calculation */
-    }
-    /* --- End Project Wrapper --- */
-
-
-    /* --- Project Item Styles --- */
-    /* Container for each project row (video + text) */
-    .project-item {
-      display: flex;
-      flex-wrap: wrap; /* Wrap on small screens */
-      align-items: flex-start; /* Align items to the top */
-      width: 100%; /* Take full width of its parent wrapper */
-      margin-bottom: 20px; /* Space between items */
-      box-sizing: border-box; /* Include padding/border in width */
-    }
-
-    /* Video Cell */
-    .project-video-cell {
-      padding: 20px; /* Padding inside the video cell */
-      width: 100%; /* Full width on mobile */
-      box-sizing: border-box;
-      position: relative; /* For absolutely positioned button */
-    }
-
-    /* Text Cell */
-    .project-text-cell {
-      padding: 20px; /* Padding inside the text cell */
-      width: 100%; /* Full width on mobile */
-      box-sizing: border-box;
-    }
-
-    /* Video Container for better control */
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-    }
-
-    .video-wrapper video {
-      width: 100%;
-      max-width: 100%;
-      display: block; /* Removes potential bottom space */
-      height: auto; /* Maintain aspect ratio */
-    }
-
-    /* Sound Toggle Button */
-    .sound-toggle-btn {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      z-index: 10;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 15px;
-      cursor: pointer;
-      font-size: 12px;
-    }
-
-    /* Project Title (using your custom tag) */
-    papertitle {
-      font-weight: normal;
-      display: block; /* Behave like a block element */
-      margin-bottom: 10px;
-    }
-
-    /* Project Links */
-    .project-link {
-      display: inline-block;
-      margin-right: 15px;
-      /* You can add color/styles here if needed, or rely on your stylesheet.css */
-    }
-
-    /* --- Desktop Styles (Media Query) --- */
-    @media (min-width: 768px) { /* Apply styles for screens wider than 768px */
-      .project-video-cell {
-        width: 25%; /* Video takes 25% width */
-      }
-
-      .project-text-cell {
-        width: 75%; /* Text takes 75% width */
-      }
-    }
-
-    /* --- Footer Styles --- */
-    .footer-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      width: 100%;
-      max-width: 800px; /* Match the main content width */
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
-
-    .footer-spacer {
-      width: 0%;
-      display: none; /* Hide the empty spacer cell */
-    }
-
-    .footer-content {
-      padding: 20px;
-      width: 100%;
-      vertical-align: middle;
-      box-sizing: border-box;
+    .content-wrapper {
+      width: 100%; max-width: 800px; margin: 0 auto;
+      padding: 0 20px; box-sizing: border-box;
     }
 
     hr {
-      margin-top: 0px;
-      margin-bottom: 10px;
-      border: 0;
-      height: 1px;
-      background-color: #ccc; /* Define a color for the line */
+      border: 0; height: 1px; background-color: #e0e0e0;
+      margin: 30px 0;
     }
 
-    .footer-text {
-      color: #999999;
-      font-size: 0.9em;
+    a { color: #007bff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* --- Profile Section (Table Layout) --- */
+    .profile-section {
+      margin-top: 30px;
     }
 
-    .footer-text a {
-      color: #999999;
-      text-decoration: underline;
-    }
-
-    /* --- Profile Section Adjustments (Optional) --- */
-    /* Ensure the main profile table doesn't exceed the max-width */
-    .profile-table-container {
-        width:100%;
-        max-width:800px;
-        border:0px;
-        border-spacing:0px;
-        border-collapse:separate;
-        margin-right:auto;
-        margin-left:auto;
-    }
     .profile-table {
-        width:100%;
-        border:0px;
-        border-spacing:0px;
-        border-collapse:separate;
-        margin-right:auto;
-        margin-left:auto;
-    }
-    .profile-text-cell {
-        padding:2.5%; /* This padding is matched by the project wrapper */
-        width:63%; /* Adjusted for flexbox stacking if needed, but keeping original */
-        vertical-align:middle;
-        box-sizing: border-box;
-    }
-    .profile-image-cell {
-        padding:2.5%; /* This padding is matched by the project wrapper */
-        width:40%; /* Adjusted for flexbox stacking if needed, but keeping original */
-        max-width:40%;
-        box-sizing: border-box;
-    }
-    .profile-image-cell img {
-        width:100%;
-        max-width:100%;
+      width: 100%;
+      border-spacing: 0;
+      /* This is the key fix: It forces the browser to respect the defined column widths */
+      table-layout: fixed; 
     }
 
+    .profile-text-cell {
+      width: 66.66%; /* Strictly 2/3 width */
+      padding-right: 40px;
+      box-sizing: border-box;
+      vertical-align: middle; /* Aligns content vertically */
+    }
+    
+    /* Default alignment for paragraphs inside the text cell is left */
+    .profile-text-cell p {
+      text-align: left; 
+      margin: 10px 0;
+    }
+    
+    /* Specific styles for name and links as requested */
+    .profile-text-cell .name {
+      font-size: 1.5em; 
+      font-weight: bold;     /* Makes name bold */
+      text-align: center;    /* Centers name within the text cell */
+      margin-bottom: 10px;
+    }
+
+    .profile-text-cell .contact-links {
+      text-align: center;    /* Centers links within the text cell */
+      margin-bottom: 20px;   /* Add some space below the links */
+    }
+    
+    .profile-image-cell {
+      width: 33.33%; /* Strictly 1/3 width */
+      box-sizing: border-box;
+      vertical-align: middle; /* Aligns content vertically */
+    }
+
+    .profile-image-cell img {
+      width: 100%; height: auto; display: block; border-radius: 12px;
+    }
+
+    /* --- Project Section (Flexbox Layout) --- */
+    .project-heading {
+      margin-top: 20px; margin-bottom: 20px;
+    }
+
+    .project-item {
+      display: flex; flex-wrap: wrap; align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .project-media-cell {
+      flex: 0 0 30%;
+      padding-right: 20px; box-sizing: border-box;
+    }
+    
+    .project-text-cell {
+      flex: 1 1 70%;
+      box-sizing: border-box;
+    }
+
+    .video-wrapper {
+      position: relative; width: 100%; border-radius: 8px;
+      overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .video-wrapper video { width: 100%; display: block; height: auto; }
+    .sound-toggle-btn {
+      position: absolute; bottom: 8px; right: 8px; z-index: 10;
+      background: rgba(0, 0, 0, 0.6); color: white; border: none;
+      padding: 4px 9px; border-radius: 15px; cursor: pointer; font-size: 12px;
+    }
+
+    papertitle { font-weight: bold; display: block; margin-bottom: 8px; }
+    .project-link { display: inline-block; margin-right: 15px; font-weight: 500; }
+
+    /* --- Responsive Adjustments for Mobile --- */
+    @media (max-width: 767px) {
+      .content-wrapper { padding: 0 15px; }
+      
+      .profile-text-cell,
+      .profile-image-cell {
+        display: block; width: 100%; padding-right: 0;
+      }
+      .profile-text-cell { margin-bottom: 20px; }
+      .profile-image-cell img { max-width: 65%; margin: 0 auto; }
+      
+      .profile-text-cell p { text-align: center; }
+      .profile-text-cell .bio { text-align: left; }
+
+      .project-media-cell,
+      .project-text-cell {
+        flex-basis: 100%; padding-right: 0;
+      }
+      .project-media-cell { margin-bottom: 15px; }
+    }
   </style>
 </head>
 
 <body>
-  <!-- Profile Section -->
-  <div class="profile-table-container"> <!-- Wrapper for max-width -->
-    <table class="profile-table"><tbody>
-      <tr>
-        <td class="profile-text-cell">
-          <p class="name" style="text-align: center;">
-            Leslie Zhao（赵祥）
-          </p>
-          <p style="text-align:center">
-            Email: lesliezhaox[at]gmail.com &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="https://github.com/LeslieZhoa">Github</a> &nbsp; &nbsp;&nbsp;&nbsp; <a href="images/Xiang_Zhao_Resume.pdf">CV</a> &nbsp;&nbsp;
-          </p>
-          <!-- Corrected link and text -->
-          <p>I am currently working as an Algorithm Engineer at <a href="https://www.alibabagroup.com/en-US">Alibaba</a> in Beijing,with research interests in image generation and digital humans</a>.
-          <p>
-            I earned my master's degree from Northeastern University in 2019 under the supervision of Professor <a href="https://zh.wikipedia.org/zh-cn/%E5%94%90%E7%AB%8B%E6%96%B0">Lixin Tang</a>. Prior to that, I completed my bachelor's degree at Northeastern University in 2016.
-          </p>
-        </td>
-        <td class="profile-image-cell">
-          <a href="images/leslie.jpg"><img alt="profile photo" src="images/leslie.jpg" class="hoverZoomLink"></a>
-        </td>
-      </tr>
-    </tbody></table>
+  <div class="content-wrapper">
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <table class="profile-table">
+        <tbody>
+          <tr>
+            <td class="profile-text-cell">
+              <p class="name">Leslie Zhao（赵祥）</p>
+              <p class="contact-links">
+                Email: lesliezhaox[at]gmail.com &nbsp;/&nbsp;
+                <a href="https://github.com/LeslieZhoa">Github</a> &nbsp;/&nbsp;
+                <a href="images/Xiang_Zhao_Resume.pdf">CV</a>
+              </p>
+              <p class="bio">I am currently working as an Algorithm Engineer at <a href="https://www.alibabagroup.com/en-US">Alibaba</a> in Beijing,with research interests in image generation and digital humans</a>.
+              <p class="bio">
+                I earned my master's degree from Northeastern University in 2019 under the supervision of Professor <a href="https://zh.wikipedia.org/zh-cn/%E5%94%90%E7%AB%8B%E6%96%B0">Lixin Tang</a>. Prior to that, I completed my bachelor's degree at Northeastern University in 2016.
+              </p>
+            </td>
+            <td class="profile-image-cell">
+              <a href="images/leslie.jpg"><img alt="profile photo" src="images/leslie.jpg"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <!-- Project Section -->
+    <section class="project-section">
+      <h2 class="project-heading">Projects</h2>
+      
+      <!-- Project 1 -->
+      <div class="project-item">
+        <div class="project-media-cell">
+          <div class="video-wrapper">
+            <video id="myVideo1" playsinline autoplay loop preload="metadata" muted>
+              <source src='images/lip.mp4' type='video/mp4'>
+            </video>
+            <button id="soundToggle1" class="sound-toggle-btn">🔊 Unmute</button>
+          </div>
+        </div>
+        <div class="project-text-cell">
+          <papertitle>The first hyper-realistic digital human in China to participate in film and television productions.</papertitle>
+          <a class="project-link" href="https://www.youtube.com/watch?v=8F9Gxm6nCro">[News]</a>
+        </div>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="project-item">
+        <div class="project-media-cell">
+          <div class="video-wrapper">
+            <video playsinline autoplay loop preload="metadata" muted>
+              <source src='images/headswap.mp4' type='video/mp4'>
+            </video>
+          </div>
+        </div>
+        <div class="project-text-cell">
+          <papertitle>A head-swapping project for seamless integration with backgrounds.</papertitle>
+          <a class="project-link" href="https://github.com/LeslieZhoa/HeadSwap">[Code]</a>
+        </div>
+      </div>
+      
+      <!-- Project 3 -->
+      <div class="project-item">
+        <div class="project-media-cell">
+          <div class="video-wrapper">
+            <video playsinline autoplay loop preload="metadata" muted>
+              <source src='images/lora.mp4' type='video/mp4'>
+            </video>
+          </div>
+        </div>
+        <div class="project-text-cell">
+          <papertitle>2D digital human created through single-image LoRA training.</papertitle>
+          <a class="project-link" href="https://github.com/LeslieZhoa/Simple-Lora">[Code]</a>
+        </div>
+      </div>
+      
+      <!-- Project 4 -->
+      <div class="project-item">
+        <div class="project-media-cell">
+          <div class="video-wrapper">
+            <video playsinline autoplay loop preload="metadata" muted>
+              <source src='images/style.mp4' type='video/mp4'>
+            </video>
+          </div>
+        </div>
+        <div class="project-text-cell">
+          <papertitle>Real-time style transfer on mobile devices.</papertitle>
+          <a class="project-link" href="https://github.com/LeslieZhoa/DCT-NET.Pytorch">[Code]</a>
+        </div>
+      </div>
+
+    </section>
+
   </div>
-
-  <!-- Project Section Title -->
-  <table style="width:100%; max-width:800px; border:0px; border-spacing:0px; border-collapse:separate; margin-right:auto; margin-left:auto;">
-    <tbody>
-      <tr>
-        <td style="padding:20px; width:100%; vertical-align:middle">
-          <h2>Project</h2>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Project Content Wrapper -->
-  <div class="project-content-wrapper">
-
-    <!-- Project Items (Using Flexbox) -->
-    <!-- Project 1 -->
-    <div class="project-item">
-      <div class="project-video-cell">
-        <div class="video-wrapper">
-          <video id="myVideo1" playsinline autoplay loop preload="metadata" muted>
-            <source src='images/lip.mp4' type='video/mp4'>
-            Your browser does not support the video tag.
-          </video>
-          <button id="soundToggle1" class="sound-toggle-btn">🔊 Unmute</button>
-        </div>
-      </div>
-      <div class="project-text-cell">
-        <papertitle>The first hyper-realistic digital human in China to participate in film and television productions.</papertitle>
-        <a class="project-link" href="https://www.youtube.com/watch?v=8F9Gxm6nCro">[News]</a>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-item">
-      <div class="project-video-cell">
-        <div class="video-wrapper">
-          <video playsinline autoplay loop preload="metadata" muted>
-            <source src='images/headswap.mp4' type='video/mp4'>
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-      <div class="project-text-cell">
-        <papertitle>A head-swapping project for seamless integration with backgrounds.</papertitle>
-        <a class="project-link" href="https://github.com/LeslieZhoa/HeadSwap">[Code]</a>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-item">
-      <div class="project-video-cell">
-        <div class="video-wrapper">
-          <video playsinline autoplay loop preload="metadata" muted>
-            <source src='images/lora.mp4' type='video/mp4'>
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-      <div class="project-text-cell">
-        <papertitle>2D digital human created through single-image LoRA training.</papertitle>
-        <a class="project-link" href="https://github.com/LeslieZhoa/Simple-Lora">[Code]</a>
-      </div>
-    </div>
-
-    <!-- Project 4 -->
-    <div class="project-item">
-      <div class="project-video-cell">
-        <div class="video-wrapper">
-          <video playsinline autoplay loop preload="metadata" muted>
-            <source src='images/style.mp4' type='video/mp4'>
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-      <div class="project-text-cell">
-        <papertitle>Real-time style transfer on mobile devices.</papertitle>
-        <a class="project-link" href="https://github.com/LeslieZhoa/DCT-NET.Pytorch">[Code]</a>
-      </div>
-    </div>
-
-  </div> <!-- End Project Content Wrapper -->
 
   <!-- Footer -->
-  <div class="footer-row">
-    <div class="footer-spacer"></div> <!-- Spacer cell -->
-    <div class="footer-content">
-      <hr>
-      <p class="footer-text">The website template was adapted from <a href="https://jonbarron.info/">Jon Barron</a>.</p>
+  <footer style="text-align: center; padding: 20px 0; color: #999; font-size: 0.9em;">
+    <div class="content-wrapper">
+      The website template was adapted from <a href="https://jonbarron.info/" style="color: #999;">Jon Barron</a>.
     </div>
-  </div>
+  </footer>
 
-  <!-- JavaScript for Sound Toggle -->
+  <!-- JS -->
   <script>
-    // Generic function to set up sound toggle for a video
     function setupSoundToggle(videoId, buttonId) {
-      document.addEventListener('DOMContentLoaded', function() {
-        const video = document.getElementById(videoId);
-        const toggleBtn = document.getElementById(buttonId);
-
-        // Check if elements exist before adding event listener
-        if (video && toggleBtn) {
-          toggleBtn.addEventListener('click', function() {
-            if (video.muted) {
-              video.muted = false;
-              toggleBtn.innerHTML = '🔇 Mute';
-            } else {
-              video.muted = true;
-              toggleBtn.innerHTML = '🔊 Unmute';
-            }
-          });
-        }
-      });
+      const video = document.getElementById(videoId);
+      const toggleBtn = document.getElementById(buttonId);
+      if (video && toggleBtn) {
+        toggleBtn.addEventListener('click', function(event) {
+          event.preventDefault(); event.stopPropagation();
+          video.muted = !video.muted;
+          toggleBtn.innerHTML = video.muted ? '🔊 Unmute' : '🔇 Mute';
+        });
+      }
     }
-
-    // Set up the sound toggle for the first video
-    setupSoundToggle('myVideo1', 'soundToggle1');
-
-    // If you add more videos with sound toggles, initialize them here:
-    // setupSoundToggle('myVideo2', 'soundToggle2');
-    // setupSoundToggle('myVideo3', 'soundToggle3');
-    // ... etc
-
+    document.addEventListener('DOMContentLoaded', function() {
+      setupSoundToggle('myVideo1', 'soundToggle1');
+    });
   </script>
 </body>
 </html>
