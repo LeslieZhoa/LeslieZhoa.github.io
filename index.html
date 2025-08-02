@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Leslie Zhao</title>
+
+    <meta name="author" content="Leslie Zhao">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Leslie Zhao（赵祥）
+                </p>
+                <p style="text-align:center">
+                  Email: lesliezhaox[at]gmail.com &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="https://github.com/LeslieZhoa">Github &nbsp; &nbsp;&nbsp;&nbsp; <a href="images/Xiang_Zhao_Resume.pdf">CV</a> &nbsp;&nbsp;</a>
+                <p>I am currently working as an Algorithm Engineer at <a href="https://www.alibabagroup.com/en-US">Alibaba</a> in Beijing,with research interests in image generation and digital humans</a>.
+                </p>
+                <p>
+                  I earned my master's degree from Northeastern University in 2019 under the supervision of Professor <a href="https://zh.wikipedia.org/zh-cn/%E5%94%90%E7%AB%8B%E6%96%B0">LixinTang</a>. Prior to that, I completed my bachelor's degree at Northeastern University in 2016.
+                </p>
+              </td>
+              <td style="padding:2.5%;width:40%;max-width:40%">
+                <a href="images/leslie.jpg"><img style="width:100%;max-width:100%;" alt="profile photo" src="images/leslie.jpg" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle">
+                <h2>Project</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          
+            <tr></tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="position: relative;">
+                <video id="myVideo" playsinline autoplay loop preload muted style="width:100%;max-width:100%; position: absolute; top: -5%">
+                  <source src='images/lip.mp4'>
+                </video>
+                <button id="soundToggle" style="position: absolute; bottom: -85px; right: 10px; z-index: 10; background: rgba(0,0,0,0.5); color: white; border: none; padding: 5px 10px; border-radius: 15px; cursor: pointer; font-size: 12px;">
+                  🔊 Unmute
+                </button>
+              </div>
+            </td>
+            
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const video = document.getElementById('myVideo');
+              const toggleBtn = document.getElementById('soundToggle');
+              
+              toggleBtn.addEventListener('click', function() {
+                if (video.muted) {
+                  video.muted = false;
+                  toggleBtn.innerHTML = '🔇 Mute';
+                } else {
+                  video.muted = true;
+                  toggleBtn.innerHTML = '🔊 Unmute';
+                }
+              });
+            });
+            </script> 
+              <td style="padding:20px;width:75%;vertical-align:top">
+                  <papertitle>The first hyper-realistic digital human in China to participate in film and television productions.</papertitle>
+                  <br>
+                  <a href="https://www.youtube.com/watch?v=8F9Gxm6nCro">[News]</a>
+              </td>
+
+          <tr></tr>
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+		            <video playsinline autoplay loop preload muted style="width:100%;max-width:100%; position: absolute;top: 80%">
+                  <source src='images/headswap.mp4'>
+		            </video>
+            </div>
+          </td>
+            <td style="padding:20px;width:75%;vertical-align:top;position: absolute;top: 100%">
+                <papertitle>A head-swapping project for seamless integration with backgrounds.</papertitle>
+                <br>
+		            <a href="https://github.com/LeslieZhoa/HeadSwap">[Code]</a>
+            </td>
+            <tr></tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                  <video playsinline autoplay loop preload muted style="width:100%;max-width:100%; position: absolute;top: 60%">
+                    <source src='images/lora.mp4'>
+                  </video>
+              </div>
+            </td>
+              <td style="padding:20px;width:75%;vertical-align:top;position: absolute;top:125%">
+                  <papertitle>2D digital human created through single-image LoRA training.</papertitle>
+                  <br>
+                  <a href="https://github.com/LeslieZhoa/Simple-Lora">[Code]</a>
+              </td>
+          
+              <tr></tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                    <video playsinline autoplay loop preload muted style="width:100%;max-width:100%; position: absolute;top: 20%">
+                      <source src='images/style.mp4'>
+                    </video>
+                </div>
+              </td>
+                <td style="padding:20px;width:75%;vertical-align:top;position: absolute;top:145%">
+                    <papertitle>Real-time style transfer on mobile devices.</papertitle>
+                    <br>
+                    <a href="https://github.com/LeslieZhoa/DCT-NET.Pytorch">[Code]</a>
+                </td>
+
+                <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+                  <td style="width:0%;vertical-align:middle">
+                  </td>
+                  <td style="width:100%;vertical-align:middle">
+                  <hr style="margin-top:0px">
+                      <p><font color="#999999">The website template was adapted from <a href="https://jonbarron.info/">Jon Barron</a>.</font></p>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+          </body>
+          
+          </html>
+              
+  
+  
+      
+            
+
+
+    
