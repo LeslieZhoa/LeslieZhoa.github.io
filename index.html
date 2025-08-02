@@ -1,142 +1,355 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Leslie Zhao</title>
+  <meta name="author" content="Leslie Zhao">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Crucial for mobile -->
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-    <title>Leslie Zhao</title>
+  <style>
+    /* --- Embedded Styles for Project Section --- */
+    /* These styles are specific to fixing the layout and can be moved to your stylesheet.css if preferred */
 
-    <meta name="author" content="Leslie Zhao">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
-  </head>
+    /* Ensure base styles are consistent */
+    body {
+      font-family: Arial, sans-serif; /* Or match your existing font from stylesheet.css */
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Leslie Zhao（赵祥）
-                </p>
-                <p style="text-align:center">
-                  Email: lesliezhaox[at]gmail.com &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="https://github.com/LeslieZhoa">Github &nbsp; &nbsp;&nbsp;&nbsp; <a href="images/Xiang_Zhao_Resume.pdf">CV</a> &nbsp;&nbsp;</a>
-                <p>I am currently working as an Algorithm Engineer at <a href="https://www.alibabagroup.com/en-US">Alibaba</a> in Beijing,with research interests in image generation and digital humans</a>.
-                </p>
-                <p>
-                  I earned my master's degree from Northeastern University in 2019 under the supervision of Professor <a href="https://zh.wikipedia.org/zh-cn/%E5%94%90%E7%AB%8B%E6%96%B0">LixinTang</a>. Prior to that, I completed my bachelor's degree at Northeastern University in 2016.
-                </p>
-              </td>
-              <td style="padding:2.5%;width:40%;max-width:40%">
-                <a href="images/leslie.jpg"><img style="width:100%;max-width:100%;" alt="profile photo" src="images/leslie.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Project</h2>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          
-            <tr></tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one" style="position: relative;">
-                <video id="myVideo" playsinline autoplay loop preload muted style="width:100%;max-width:100%; position: absolute; top: -5%">
-                  <source src='images/lip.mp4'>
-                </video>
-                <button id="soundToggle" style="position: absolute; bottom: -85px; right: 10px; z-index: 10; background: rgba(0,0,0,0.5); color: white; border: none; padding: 5px 10px; border-radius: 15px; cursor: pointer; font-size: 12px;">
-                  🔊 Unmute
-                </button>
-              </div>
-            </td>
-            
-            <script>
-            document.addEventListener('DOMContentLoaded', function() {
-              const video = document.getElementById('myVideo');
-              const toggleBtn = document.getElementById('soundToggle');
-              
-              toggleBtn.addEventListener('click', function() {
-                if (video.muted) {
-                  video.muted = false;
-                  toggleBtn.innerHTML = '🔇 Mute';
-                } else {
-                  video.muted = true;
-                  toggleBtn.innerHTML = '🔊 Unmute';
-                }
-              });
-            });
-            </script> 
-              <td style="padding:20px;width:75%;vertical-align:top">
-                  <papertitle>The first hyper-realistic digital human in China to participate in film and television productions.</papertitle>
-                  <br>
-                  <a href="https://www.youtube.com/watch?v=8F9Gxm6nCro">[News]</a>
-              </td>
+    table {
+      border: 0px;
+      border-spacing: 0px;
+      border-collapse: separate;
+      margin-right: auto;
+      margin-left: auto;
+    }
 
-          <tr></tr>
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-		            <video playsinline autoplay loop preload muted style="width:100%;max-width:100%; position: absolute;top: 80%">
-                  <source src='images/headswap.mp4'>
-		            </video>
-            </div>
-          </td>
-            <td style="padding:20px;width:75%;vertical-align:top;position: absolute;top: 100%">
-                <papertitle>A head-swapping project for seamless integration with backgrounds.</papertitle>
-                <br>
-		            <a href="https://github.com/LeslieZhoa/HeadSwap">[Code]</a>
-            </td>
-            <tr></tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                  <video playsinline autoplay loop preload muted style="width:100%;max-width:100%; position: absolute;top: 60%">
-                    <source src='images/lora.mp4'>
-                  </video>
-              </div>
-            </td>
-              <td style="padding:20px;width:75%;vertical-align:top;position: absolute;top:125%">
-                  <papertitle>2D digital human created through single-image LoRA training.</papertitle>
-                  <br>
-                  <a href="https://github.com/LeslieZhoa/Simple-Lora">[Code]</a>
-              </td>
-          
-              <tr></tr>
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <div class="one">
-                    <video playsinline autoplay loop preload muted style="width:100%;max-width:100%; position: absolute;top: 20%">
-                      <source src='images/style.mp4'>
-                    </video>
-                </div>
-              </td>
-                <td style="padding:20px;width:75%;vertical-align:top;position: absolute;top:145%">
-                    <papertitle>Real-time style transfer on mobile devices.</papertitle>
-                    <br>
-                    <a href="https://github.com/LeslieZhoa/DCT-NET.Pytorch">[Code]</a>
-                </td>
+    td {
+      vertical-align: top; /* Default alignment */
+    }
 
-                <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-                  <td style="width:0%;vertical-align:middle">
-                  </td>
-                  <td style="width:100%;vertical-align:middle">
-                  <hr style="margin-top:0px">
-                      <p><font color="#999999">The website template was adapted from <a href="https://jonbarron.info/">Jon Barron</a>.</font></p>
-                  </td>
-              </tr>
-            </tbody>
-          </table>
-          </body>
-          
-          </html>
-              
-  
-  
-      
-            
+    /* --- Wrapper for Project Items to Align with Content Above --- */
+    .project-content-wrapper {
+      width: 100%;
+      max-width: 800px; /* Match the max-width of the profile section */
+      margin: 0 auto; /* Center the wrapper */
+      padding-left: 2.5%; /* Match the padding of the profile text cell */
+      padding-right: 2.5%; /* Match the padding of the profile text cell */
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
+    /* --- End Project Wrapper --- */
 
 
-    
+    /* --- Project Item Styles --- */
+    /* Container for each project row (video + text) */
+    .project-item {
+      display: flex;
+      flex-wrap: wrap; /* Wrap on small screens */
+      align-items: flex-start; /* Align items to the top */
+      width: 100%; /* Take full width of its parent wrapper */
+      margin-bottom: 20px; /* Space between items */
+      box-sizing: border-box; /* Include padding/border in width */
+    }
+
+    /* Video Cell */
+    .project-video-cell {
+      padding: 20px; /* Padding inside the video cell */
+      width: 100%; /* Full width on mobile */
+      box-sizing: border-box;
+      position: relative; /* For absolutely positioned button */
+    }
+
+    /* Text Cell */
+    .project-text-cell {
+      padding: 20px; /* Padding inside the text cell */
+      width: 100%; /* Full width on mobile */
+      box-sizing: border-box;
+    }
+
+    /* Video Container for better control */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      max-width: 100%;
+      display: block; /* Removes potential bottom space */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Sound Toggle Button */
+    .sound-toggle-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    /* Project Title (using your custom tag) */
+    papertitle {
+      font-weight: normal;
+      display: block; /* Behave like a block element */
+      margin-bottom: 10px;
+    }
+
+    /* Project Links */
+    .project-link {
+      display: inline-block;
+      margin-right: 15px;
+      /* You can add color/styles here if needed, or rely on your stylesheet.css */
+    }
+
+    /* --- Desktop Styles (Media Query) --- */
+    @media (min-width: 768px) { /* Apply styles for screens wider than 768px */
+      .project-video-cell {
+        width: 25%; /* Video takes 25% width */
+      }
+
+      .project-text-cell {
+        width: 75%; /* Text takes 75% width */
+      }
+    }
+
+    /* --- Footer Styles --- */
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      max-width: 800px; /* Match the main content width */
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .footer-spacer {
+      width: 0%;
+      display: none; /* Hide the empty spacer cell */
+    }
+
+    .footer-content {
+      padding: 20px;
+      width: 100%;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+
+    hr {
+      margin-top: 0px;
+      margin-bottom: 10px;
+      border: 0;
+      height: 1px;
+      background-color: #ccc; /* Define a color for the line */
+    }
+
+    .footer-text {
+      color: #999999;
+      font-size: 0.9em;
+    }
+
+    .footer-text a {
+      color: #999999;
+      text-decoration: underline;
+    }
+
+    /* --- Profile Section Adjustments (Optional) --- */
+    /* Ensure the main profile table doesn't exceed the max-width */
+    .profile-table-container {
+        width:100%;
+        max-width:800px;
+        border:0px;
+        border-spacing:0px;
+        border-collapse:separate;
+        margin-right:auto;
+        margin-left:auto;
+    }
+    .profile-table {
+        width:100%;
+        border:0px;
+        border-spacing:0px;
+        border-collapse:separate;
+        margin-right:auto;
+        margin-left:auto;
+    }
+    .profile-text-cell {
+        padding:2.5%; /* This padding is matched by the project wrapper */
+        width:63%; /* Adjusted for flexbox stacking if needed, but keeping original */
+        vertical-align:middle;
+        box-sizing: border-box;
+    }
+    .profile-image-cell {
+        padding:2.5%; /* This padding is matched by the project wrapper */
+        width:40%; /* Adjusted for flexbox stacking if needed, but keeping original */
+        max-width:40%;
+        box-sizing: border-box;
+    }
+    .profile-image-cell img {
+        width:100%;
+        max-width:100%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Profile Section -->
+  <div class="profile-table-container"> <!-- Wrapper for max-width -->
+    <table class="profile-table"><tbody>
+      <tr>
+        <td class="profile-text-cell">
+          <p class="name" style="text-align: center;">
+            Leslie Zhao（赵祥）
+          </p>
+          <p style="text-align:center">
+            Email: lesliezhaox[at]gmail.com &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="https://github.com/LeslieZhoa">Github</a> &nbsp; &nbsp;&nbsp;&nbsp; <a href="images/Xiang_Zhao_Resume.pdf">CV</a> &nbsp;&nbsp;
+          </p>
+          <!-- Corrected link and text -->
+          <p>I am currently working as an Algorithm Engineer at <a href="https://www.alibabagroup.com/en-US">Alibaba</a> in Beijing,with research interests in image generation and digital humans</a>.
+          <p>
+            I earned my master's degree from Northeastern University in 2019 under the supervision of Professor <a href="https://zh.wikipedia.org/zh-cn/%E5%94%90%E7%AB%8B%E6%96%B0">Lixin Tang</a>. Prior to that, I completed my bachelor's degree at Northeastern University in 2016.
+          </p>
+        </td>
+        <td class="profile-image-cell">
+          <a href="images/leslie.jpg"><img alt="profile photo" src="images/leslie.jpg" class="hoverZoomLink"></a>
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+
+  <!-- Project Section Title -->
+  <table style="width:100%; max-width:800px; border:0px; border-spacing:0px; border-collapse:separate; margin-right:auto; margin-left:auto;">
+    <tbody>
+      <tr>
+        <td style="padding:20px; width:100%; vertical-align:middle">
+          <h2>Project</h2>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Project Content Wrapper -->
+  <div class="project-content-wrapper">
+
+    <!-- Project Items (Using Flexbox) -->
+    <!-- Project 1 -->
+    <div class="project-item">
+      <div class="project-video-cell">
+        <div class="video-wrapper">
+          <video id="myVideo1" playsinline autoplay loop preload="metadata" muted>
+            <source src='images/lip.mp4' type='video/mp4'>
+            Your browser does not support the video tag.
+          </video>
+          <button id="soundToggle1" class="sound-toggle-btn">🔊 Unmute</button>
+        </div>
+      </div>
+      <div class="project-text-cell">
+        <papertitle>The first hyper-realistic digital human in China to participate in film and television productions.</papertitle>
+        <a class="project-link" href="https://www.youtube.com/watch?v=8F9Gxm6nCro">[News]</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-item">
+      <div class="project-video-cell">
+        <div class="video-wrapper">
+          <video playsinline autoplay loop preload="metadata" muted>
+            <source src='images/headswap.mp4' type='video/mp4'>
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="project-text-cell">
+        <papertitle>A head-swapping project for seamless integration with backgrounds.</papertitle>
+        <a class="project-link" href="https://github.com/LeslieZhoa/HeadSwap">[Code]</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-item">
+      <div class="project-video-cell">
+        <div class="video-wrapper">
+          <video playsinline autoplay loop preload="metadata" muted>
+            <source src='images/lora.mp4' type='video/mp4'>
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="project-text-cell">
+        <papertitle>2D digital human created through single-image LoRA training.</papertitle>
+        <a class="project-link" href="https://github.com/LeslieZhoa/Simple-Lora">[Code]</a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-item">
+      <div class="project-video-cell">
+        <div class="video-wrapper">
+          <video playsinline autoplay loop preload="metadata" muted>
+            <source src='images/style.mp4' type='video/mp4'>
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="project-text-cell">
+        <papertitle>Real-time style transfer on mobile devices.</papertitle>
+        <a class="project-link" href="https://github.com/LeslieZhoa/DCT-NET.Pytorch">[Code]</a>
+      </div>
+    </div>
+
+  </div> <!-- End Project Content Wrapper -->
+
+  <!-- Footer -->
+  <div class="footer-row">
+    <div class="footer-spacer"></div> <!-- Spacer cell -->
+    <div class="footer-content">
+      <hr>
+      <p class="footer-text">The website template was adapted from <a href="https://jonbarron.info/">Jon Barron</a>.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript for Sound Toggle -->
+  <script>
+    // Generic function to set up sound toggle for a video
+    function setupSoundToggle(videoId, buttonId) {
+      document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById(videoId);
+        const toggleBtn = document.getElementById(buttonId);
+
+        // Check if elements exist before adding event listener
+        if (video && toggleBtn) {
+          toggleBtn.addEventListener('click', function() {
+            if (video.muted) {
+              video.muted = false;
+              toggleBtn.innerHTML = '🔇 Mute';
+            } else {
+              video.muted = true;
+              toggleBtn.innerHTML = '🔊 Unmute';
+            }
+          });
+        }
+      });
+    }
+
+    // Set up the sound toggle for the first video
+    setupSoundToggle('myVideo1', 'soundToggle1');
+
+    // If you add more videos with sound toggles, initialize them here:
+    // setupSoundToggle('myVideo2', 'soundToggle2');
+    // setupSoundToggle('myVideo3', 'soundToggle3');
+    // ... etc
+
+  </script>
+</body>
+</html>
