@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mask-free Lip Sync (WAN2.2)</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    h1 { font-size: 26px; margin-bottom: 8px; }
+    .subtitle { color: #555; margin-bottom: 20px; }
+    video {
+      width: 100%;
+      border-radius: 12px;
+      background: black;
+      margin-bottom: 20px;
+    }
+    .section {
+      margin-top: 20px;
+    }
+    .back {
+      margin-top: 30px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Mask-free Lip Sync with WAN2.2</h1>
+<div class="subtitle">
+Diffusion-based lip synchronization built on a large-scale video foundation model.
+</div>
+
+<video controls playsinline preload="metadata">
+  <source src="images/captain.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<div class="section">
+<strong>Technical Notes</strong><br>
+• Built on WAN2.2 video foundation model<br>
+• Mask-free lip alignment<br>
+• Improved temporal consistency compared to GAN-based methods<br>
+• Identity preservation without explicit region masking
+</div>
+
+<div class="section back">
+<a href="index.html">← Back to Home</a>
+</div>
+
+</body>
+</html>
