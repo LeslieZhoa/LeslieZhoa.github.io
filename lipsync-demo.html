@@ -3,56 +3,240 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Mask-free Lip Sync (WAN2.2)</title>
+  <title>Audio-Driven Lip Sync — WAN2.2 Demo</title>
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-      margin: 40px auto;
-      max-width: 900px;
-      padding: 0 20px;
-      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.7;
     }
-    h1 { font-size: 26px; margin-bottom: 8px; }
-    .subtitle { color: #555; margin-bottom: 20px; }
-    video {
+
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* ---- Header ---- */
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    h1 {
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 700;
+      margin: 0 0 6px;
+      line-height: 1.3;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    /* ---- Video ---- */
+    .video-container {
       width: 100%;
+      background: #000;
       border-radius: 12px;
-      background: black;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      margin-bottom: 36px;
+    }
+
+    .video-container video {
+      width: 100%;
+      display: block;
+      max-height: 480px;
+      object-fit: contain;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 20px 24px;
       margin-bottom: 20px;
     }
-    .section {
-      margin-top: 20px;
+
+    .section h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 14px;
+      color: #111;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
     }
-    .back {
-      margin-top: 30px;
+
+    /* ---- Tech Grid ---- */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .tech-card {
+      background: #f4f7ff;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .tech-card .label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #5070c0;
+      margin-bottom: 6px;
+    }
+
+    .tech-card p {
+      margin: 0;
       font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* ---- Bullet list ---- */
+    .bullet-list {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .bullet-list li {
+      padding: 5px 0 5px 20px;
+      position: relative;
+      font-size: 14.5px;
+      color: #444;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .bullet-list li:last-child { border-bottom: none; }
+
+    .bullet-list li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: #5070c0;
+      font-weight: bold;
+    }
+
+    /* ---- Stage table ---- */
+    .stage-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .stage-table th {
+      background: #f0f3ff;
+      color: #333;
+      font-weight: 600;
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 2px solid #d0d8f0;
+    }
+
+    .stage-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+
+    .stage-table tr:last-child td { border-bottom: none; }
+
+    /* ---- Badge ---- */
+    .badge {
+      display: inline-block;
+      background: #e8eefc;
+      color: #3a5cc5;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 20px;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 600px) {
+      .page-wrapper { padding: 24px 14px 48px; }
+      .section { padding: 16px 14px; }
+      .stage-table th, .stage-table td { padding: 6px 8px; }
     }
   </style>
 </head>
 
 <body>
+<div class="page-wrapper">
 
-<h1>Mask-free Lip Sync with WAN2.2</h1>
-<div class="subtitle">
-Diffusion-based lip synchronization built on a large-scale video foundation model.
+  <a class="back-link" href="index.html">← Back to Home</a>
+
+  <h1>Audio-Driven Lip Sync on a Video Diffusion Foundation Model</h1>
+  <div class="subtitle">
+    Mask-free lip synchronization built on WAN2.2 — a large-scale video generation foundation model.
+  </div>
+
+  <!-- Video -->
+  <div class="video-container" style="position:relative;">
+    <video id="demoVideo" controls playsinline preload="metadata" muted>
+      <source src="images/captain.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button id="demoUnmute" onclick="toggleDemoSound()" style="
+      position:absolute; bottom:14px; right:14px;
+      background:rgba(0,0,0,0.65); color:#fff; border:none;
+      padding:6px 14px; border-radius:20px; cursor:pointer;
+      font-size:13px; font-weight:600; z-index:10;
+    ">🔊 Unmute</button>
+  </div>
+  <script>
+    function toggleDemoSound() {
+      var v = document.getElementById('demoVideo');
+      var btn = document.getElementById('demoUnmute');
+      v.muted = !v.muted;
+      btn.textContent = v.muted ? '🔊 Unmute' : '🔇 Mute';
+    }
+  </script>
+
+  <!-- Overview -->
+  <div class="section">
+    <h2>Overview</h2>
+    <ul class="bullet-list">
+      <li>Mask-free lip sync on <strong>WAN2.2</strong> video diffusion model</li>
+      <li>Gaussian-weighted spatial CFG for localized mouth control</li>
+      <li>Multi-stage curriculum: high-noise → structure, low-noise → detail</li>
+      <li><strong>50 → 4 step</strong> inference via DMD distillation</li>
+      <li>VL-assisted supervision for temporal & semantic consistency</li>
+      <li>Generalizes to children's animation domain</li>
+    </ul>
+  </div>
+
+  <!-- Keywords -->
+  <div class="section">
+    <h2>Keywords</h2>
+    <span class="badge">Video Diffusion</span>
+    <span class="badge">WAN2.2</span>
+    <span class="badge">Lip Sync</span>
+    <span class="badge">Mask-free</span>
+    <span class="badge">Spatial CFG</span>
+    <span class="badge">DMD</span>
+    <span class="badge">VL Supervision</span>
+  </div>
+
 </div>
-
-<video controls playsinline preload="metadata">
-  <source src="images/captain.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<div class="section">
-<strong>Technical Notes</strong><br>
-• Built on WAN2.2 video foundation model<br>
-• Mask-free lip alignment<br>
-• Improved temporal consistency compared to GAN-based methods<br>
-• Identity preservation without explicit region masking
-</div>
-
-<div class="section back">
-<a href="index.html">← Back to Home</a>
-</div>
-
 </body>
 </html>

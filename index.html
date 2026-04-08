@@ -153,7 +153,8 @@
                 <a href="https://github.com/LeslieZhoa">Github</a> &nbsp;/&nbsp;
                 <a href="images/Xiang_Zhao_Resume.pdf">CV</a>
               </p>
-              <p class="bio">I am currently working as an Algorithm Engineer at <a href="https://www.alibabagroup.com/en-US">Alibaba</a> in Beijing, with research interests in image generation and digital humans.</p>
+              <p class="bio">I am a Senior Algorithm Engineer at <a href="https://www.alibabagroup.com/en-US">Alibaba</a> in Beijing, focusing on <b>controllable visual generation</b> with an emphasis on precise editing under preservation constraints.</p>
+              <p class="bio">My current interests include structured perceptual priors, VL/VLM-based supervision, and multimodal reward design for fine-grained visual editing and video generation. In the longer term, I am exploring how multimodal video generation can connect to action-conditioned modeling and VLA-style systems.</p>
               <p class="bio">I earned my master's degree from Northeastern University in 2019 under the supervision of Professor <a href="https://zh.wikipedia.org/zh-cn/%E5%94%90%E7%AB%8B%E6%96%B0">Lixin Tang</a>. Prior to that, I completed my bachelor's degree at Northeastern University in 2016.</p>
             </td>
             <td class="profile-image-cell">
@@ -170,27 +171,47 @@
     <section class="project-section">
       <h2 class="project-heading">Projects</h2>
       
-      <!-- Project 1 -->
+      <!-- Project 1: WAN2.2 Lipsync -->
       <div class="project-item">
         <div class="project-media-cell">
           <div class="video-wrapper">
-            <video id="myVideo1" playsinline autoplay loop muted preload="metadata">
-              <source src='images/lip.mp4' type='video/mp4'>
+            <video id="myVideoWan" playsinline autoplay loop preload="metadata" muted>
+              <source src='images/captain.mp4' type='video/mp4'>
             </video>
-            <button id="soundToggle1" class="sound-toggle-btn">🔊 Unmute</button>
+            <button id="soundToggleWan" class="sound-toggle-btn">🔊 Unmute</button>
           </div>
         </div>
         <div class="project-text-cell">
           <papertitle>
-            <b>Lip-Sync Synthesis Technology Powered by StyleSync</b><br><br>
-            This technology enables highly accurate lip-sync synthesis driven by speech, supporting multiple languages including Chinese, English, Thai, and Japanese.<br><br>
-            <b>Core strengths:</b><br>
-            • Precise audio-video synchronization<br>
-            • Industry-leading video generation quality<br><br>
-            <b>Applications:</b><br>
-            • Alibaba Group’s hyper-realistic digital human <i>Lili</i><br>
-            • Alipay Healthcare System’s assistants <i>Yibao’er</i> and <i>Anzhen’er</i><br>
-            • Thailand’s TB Global Media Group’s digital human <i>Lu Xiao Zhai</i>
+            <b>Audio-Driven Lip Sync on a Video Diffusion Foundation Model</b><br><br>
+            • Mask-free lip sync on video diffusion backbone<br>
+            • Gaussian-weighted spatial guidance — no explicit masks<br>
+            • Multi-stage curriculum training<br>
+            • DMD distillation: 50 → 4 steps<br>
+            • VL-assisted supervision for temporal control
+          </papertitle>
+          <div class="project-links">
+            <a class="project-link" href="lipsync-demo.html">[Demo Page]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: StyleSync -->
+      <div class="project-item">
+        <div class="project-media-cell">
+          <div class="video-wrapper">
+            <video playsinline autoplay loop muted preload="metadata">
+              <source src='images/lip.mp4' type='video/mp4'>
+            </video>
+          </div>
+        </div>
+        <div class="project-text-cell">
+          <papertitle>
+            <b>Real-Time Lip Sync for Ultra-Realistic Digital Humans</b><br><br>
+            • StyleSync-based inpainting model, multi-language support<br>
+            • Per-identity fine-tuning with ~1 min reference video<br>
+            • 0.5 s / video-second on RTX 4090<br>
+            • Deployed: <i>Lili</i> · <i>Yibao’er</i> · <i>Anzhen’er</i> · <i>Lu Xiao Zhai</i>
           </papertitle>
           <div class="project-links">
             <a class="project-link" href="https://cn.chinadaily.com.cn/a/202405/23/WS664f19c9a3109f7860ddf2aa.html">Lili News</a> | 
@@ -212,12 +233,10 @@
         </div>
         <div class="project-text-cell">
           <papertitle>
-            <b>Head-Swapping Technology</b><br><br>
-            This technology integrates advances from <i>HeSer: Few-Shot Head Swapping in the Wild
-            </i> and <i>PIRenderer: Controllable Portrait Image Generation via Semantic Neural Rendering</i>.<br><br>
-            <b>Key improvements:</b><br>
-            • Fine-tuning the PIRenderer driving model to enhance motion accuracy<br>
-            • Training a Relight model inspired by HeSer to achieve more natural and seamless head fusion between driving and target videos
+            <b>High-Fidelity Face Swapping for Virtual Idols</b><br><br>
+            • Identity Compensation Network for fine-grained ID preservation<br>
+            • StyleGAN-based FaceBlender for seamless color blending<br>
+            • Deployed on Douyin for virtual idol content <i>(Microsoft Xiaoice)</i>
           </papertitle>
           <a class="project-link" href="https://github.com/LeslieZhoa/HeadSwap">[Code]</a>
         </div>
@@ -234,14 +253,10 @@
         </div>
         <div class="project-text-cell">
           <papertitle>
-            <b>2D Digital Human</b><br><br>
-            This technology trains a LoRA model based on <i>Stable Diffusion 1.5</i> using a small set of images from the same ID to create virtual idols.<br><br>
-            <b>Integrated functions:</b><br>
-            • ControlNet<br>
-            • Inpainting<br>
-            • T2I-Adapter<br>
-            • Instruct-Pix2Pix<br><br>
-            Together, these components enable flexible and high-quality generation and editing of 2D digital humans.
+            <b>2D Digital Human via LoRA</b><br><br>
+            • Few-shot LoRA training on Stable Diffusion 1.5<br>
+            • Integrates ControlNet, Inpainting, T2I-Adapter, Instruct-Pix2Pix<br>
+            • Flexible generation & editing for virtual idols
           </papertitle>
           <a class="project-link" href="https://github.com/LeslieZhoa/Simple-Lora">[Code]</a>
         </div>
@@ -258,12 +273,10 @@
         </div>
         <div class="project-text-cell">
           <papertitle>
-            <b>Mobile Real-Time Anime Stylization Model</b><br><br>
-            Based on <i>DCT-Net: Domain-Calibrated Translation for Portrait Stylization</i>, this model enables real-time anime-style portrait stylization on mobile devices.<br><br>
-            <b>Highlights:</b><br>
-            • Mobile-friendly, real-time processing<br>
-            • Code reproduced from the original model<br>
-            • Efficient and smooth anime-style conversion for interactive user experiences
+            <b>Unpaired Style Transfer for Real-Time Mobile Deployment</b><br><br>
+            • Inverse-StyleGAN pseudo-paired training (Disney / CG face)<br>
+            • Knowledge-distilled for real-time mobile inference<br>
+            • Triton deployment at 80 ms/frame <i>(BIGO Technology)</i>
           </papertitle>
           <a class="project-link" href="https://github.com/LeslieZhoa/DCT-NET.Pytorch">[Code]</a>
         </div>
@@ -279,28 +292,18 @@
     </div>
   </footer>
 
-  <!-- JS -->
   <script>
-    function setupSoundToggle(videoId, buttonId) {
-      const video = document.getElementById(videoId);
-      const toggleBtn = document.getElementById(buttonId);
-
-      if (video && toggleBtn) {
-        toggleBtn.innerHTML = video.muted ? '🔊 Unmute' : '🔇 Mute';
-        
-        toggleBtn.addEventListener('click', function(event) {
-          event.preventDefault(); 
-          event.stopPropagation();
-          
-          video.muted = !video.muted;
-          toggleBtn.innerHTML = video.muted ? '🔊 Unmute' : '🔇 Mute';
-        });
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      setupSoundToggle('myVideo1', 'soundToggle1');
-    });
+    (function() {
+      var video = document.getElementById('myVideoWan');
+      var btn = document.getElementById('soundToggleWan');
+      if (!video || !btn) return;
+      btn.addEventListener('click', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        video.muted = !video.muted;
+        btn.innerHTML = video.muted ? '🔊 Unmute' : '🔇 Mute';
+      });
+    })();
   </script>
+
 </body>
 </html>
