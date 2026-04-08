@@ -200,9 +200,10 @@
       <div class="project-item">
         <div class="project-media-cell">
           <div class="video-wrapper">
-            <video playsinline autoplay loop muted preload="metadata">
+            <video id="myVideoStyleSync" playsinline autoplay loop muted preload="metadata">
               <source src='images/lip.mp4' type='video/mp4'>
             </video>
+            <button id="soundToggleStyleSync" class="sound-toggle-btn">🔊 Unmute</button>
           </div>
         </div>
         <div class="project-text-cell">
@@ -296,6 +297,16 @@
     (function() {
       var video = document.getElementById('myVideoWan');
       var btn = document.getElementById('soundToggleWan');
+      if (!video || !btn) return;
+      btn.addEventListener('click', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        video.muted = !video.muted;
+        btn.innerHTML = video.muted ? '🔊 Unmute' : '🔇 Mute';
+      });
+    })();
+    (function() {
+      var video = document.getElementById('myVideoStyleSync');
+      var btn = document.getElementById('soundToggleStyleSync');
       if (!video || !btn) return;
       btn.addEventListener('click', function(e) {
         e.preventDefault(); e.stopPropagation();
