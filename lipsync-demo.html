@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="Xiang Zhao">
   <title>Audio-Driven Lip Sync — WAN2.2 Demo</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
@@ -171,11 +172,60 @@
       margin-bottom: 4px;
     }
 
+    /* ---- Animation comparison ---- */
+    .comparison-scroll {
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .comparison-track {
+      width: 100%;
+      min-width: 760px;
+    }
+
+    .comparison-labels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 8px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .comparison-labels span {
+      padding: 7px 8px;
+      background: #f0f3ff;
+    }
+
+    .comparison-video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 90 / 17;
+      object-fit: contain;
+      background: #000;
+      border-radius: 8px;
+    }
+
+    .comparison-caption,
+    .mobile-hint {
+      margin: 10px 0 0;
+      color: #666;
+      font-size: 13px;
+    }
+
+    .mobile-hint { display: none; }
+
     /* ---- Responsive ---- */
     @media (max-width: 600px) {
       .page-wrapper { padding: 24px 14px 48px; }
       .section { padding: 16px 14px; }
       .stage-table th, .stage-table td { padding: 6px 8px; }
+      .comparison-track { min-width: 780px; }
+      .mobile-hint { display: block; }
     }
   </style>
 </head>
@@ -216,13 +266,32 @@
   <div class="section">
     <h2>Overview</h2>
     <ul class="bullet-list">
-      <li>Mask-free lip sync on <strong>WAN2.2</strong> video diffusion model</li>
-      <li>Gaussian-weighted spatial CFG for localized mouth control</li>
-      <li>Multi-stage curriculum: high-noise → structure, low-noise → detail</li>
-      <li><strong>50 → 4 step</strong> inference via DMD distillation</li>
-      <li>VL-assisted supervision for temporal & semantic consistency</li>
-      <li>Generalizes to children's animation domain</li>
+      <li>Audio-conditioned, mask-free lip synchronization on the <strong>WAN2.2</strong> video diffusion model</li>
+      <li>MEAD-derived pseudo-paired training data</li>
+      <li>Separate high- and low-noise training strategies for global structure and fine lip detail</li>
+      <li>Localized mouth control without masks or mouth landmarks at inference</li>
+      <li><strong>50 → 4 inference steps</strong> via DMD distillation</li>
     </ul>
+  </div>
+
+  <!-- Animation-domain comparison -->
+  <div class="section" id="animation-comparison">
+    <h2>Animation-Domain Comparison</h2>
+    <div class="comparison-scroll" tabindex="0" aria-label="Scrollable three-panel animation-domain comparison">
+      <div class="comparison-track">
+        <div class="comparison-labels" aria-hidden="true">
+          <span>Input Video</span>
+          <span>With Animation Data</span>
+          <span>Without Animation Data</span>
+        </div>
+        <video class="comparison-video" controls playsinline preload="metadata" width="5760" height="1088" aria-label="Input video and lip-sync outputs trained with and without animation data">
+          <source src="images/animation.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <p class="comparison-caption">Both outputs use the same Chinese-language audio.</p>
+    <p class="mobile-hint">On smaller screens, swipe horizontally or use fullscreen in landscape to inspect all three panels.</p>
   </div>
 
   <!-- Keywords -->
@@ -234,7 +303,8 @@
     <span class="badge">Mask-free</span>
     <span class="badge">Spatial CFG</span>
     <span class="badge">DMD</span>
-    <span class="badge">VL Supervision</span>
+    <span class="badge">Pseudo-Paired Data</span>
+    <span class="badge">Animation Adaptation</span>
   </div>
 
 </div>

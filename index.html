@@ -3,9 +3,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Leslie Zhao</title>
-  <meta name="author" content="xxx">
+  <meta name="author" content="Xiang Zhao">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
   <style>
@@ -105,6 +104,8 @@
 
     .project-text-cell { flex: 1 1 70%; box-sizing: border-box; }
 
+    .project-links { overflow-wrap: anywhere; }
+
     .sound-toggle-btn {
       position: absolute; bottom: 8px; right: 8px; z-index: 10;
       background: rgba(0, 0, 0, 0.6); color: white; border: none;
@@ -117,6 +118,14 @@
     /* --- Responsive Adjustments for Mobile --- */
     @media (max-width: 767px) {
       .content-wrapper { padding: 0 15px; }
+
+      .profile-table,
+      .profile-table tbody,
+      .profile-table tr {
+        display: block;
+        width: 100%;
+      }
+
       .profile-text-cell, .profile-image-cell { display: block; width: 100%; padding-right: 0; }
       .profile-text-cell { order: 1; margin-bottom: 20px; } 
       .profile-image-cell { order: 2; }
@@ -124,8 +133,9 @@
       .profile-text-cell p { text-align: center; }
       .profile-text-cell .bio { text-align: left; }
 
-      .project-media-cell, .project-text-cell { flex-basis: 100%; padding-right: 0; }
-      .project-media-cell { margin-bottom: 15px; }
+      .project-item { display: block; }
+      .project-media-cell, .project-text-cell { width: 100%; min-width: 0; padding-right: 0; }
+      .project-media-cell { display: block; margin-bottom: 15px; }
       
       /* 在移动端，视频宽度为100%，高度自动，contain 和 cover 效果相似，但 contain 保证了完整性 */
       .project-media-cell .video-wrapper { 
@@ -150,12 +160,12 @@
               <p class="name">Leslie Zhao（赵祥）</p>
               <p class="contact-links">
                 Email: lesliezhaox[at]gmail.com &nbsp;/&nbsp;
-                <a href="https://github.com/LeslieZhoa">Github</a> &nbsp;/&nbsp;
+                <a href="https://github.com/LeslieZhoa">GitHub</a> &nbsp;/&nbsp;
                 <a href="images/Xiang_Zhao_Resume.pdf">CV</a>
               </p>
-              <p class="bio">I was a Senior Algorithm Engineer at <a href="https://www.alibabagroup.com/en-US">Alibaba</a> in Beijing (until May 2026), focusing on <b>controllable visual generation</b> with an emphasis on precise editing under preservation constraints.</p>
-              <p class="bio">My current interests include structured perceptual priors, VL/VLM-based supervision, and multimodal reward design for fine-grained visual editing and video generation. In the longer term, I am exploring how multimodal video generation can connect to action-conditioned modeling and VLA-style systems.</p>
-              <p class="bio">I earned my master's degree from Northeastern University in 2019 under the supervision of Professor <a href="https://zh.wikipedia.org/zh-cn/%E5%94%90%E7%AB%8B%E6%96%B0">Lixin Tang</a>. Prior to that, I completed my bachelor's degree at Northeastern University in 2016.</p>
+              <p class="bio">I was a Senior Algorithm Engineer at <a href="https://www.alibabagroup.com/en-US">Alibaba</a> in Beijing until May 2026, where I worked on <b>controllable visual generation</b>, particularly precise editing under identity- and content-preservation constraints.</p>
+              <p class="bio">My current interests center on how video models interpret multimodal inputs and capture the relationships among language, visual content, motion, and temporal structure, enabling more controllable video generation and action prediction.</p>
+              <p class="bio">I earned my master's degree from Northeastern University (China) in 2019 under the supervision of Professor <a href="https://xkjs.neu.edu.cn/EN/2024/0514/c2810a248316/pagem.htm">Lixin Tang</a>. I received my bachelor's degree from the same university in 2016.</p>
             </td>
             <td class="profile-image-cell">
               <a href="images/leslie.jpg"><img alt="profile photo" src="images/leslie.jpg"></a>
@@ -184,11 +194,11 @@
         <div class="project-text-cell">
           <papertitle>
             <b>Audio-Driven Lip Sync on a Video Diffusion Foundation Model</b><br><br>
-            • Mask-free lip sync on video diffusion backbone<br>
-            • Gaussian-weighted spatial guidance — no explicit masks<br>
-            • Multi-stage curriculum training<br>
-            • DMD distillation: 50 → 4 steps<br>
-            • VL-assisted supervision for temporal control
+            • Mask-free lip sync on a video diffusion backbone<br>
+            • MEAD-derived pseudo-paired training data<br>
+            • Separate high- and low-noise training strategies<br>
+            • Localized mouth control without masks or mouth landmarks at inference<br>
+            • DMD distillation: 50 → 4 steps
           </papertitle>
           <div class="project-links">
             <a class="project-link" href="lipsync-demo.html">[Demo Page]</a>
@@ -209,9 +219,9 @@
         <div class="project-text-cell">
           <papertitle>
             <b>Real-Time Lip Sync for Ultra-Realistic Digital Humans</b><br><br>
-            • StyleSync-based inpainting model, multi-language support<br>
-            • Per-identity fine-tuning with ~1 min reference video<br>
-            • 0.5 s / video-second on RTX 4090<br>
+            • StyleSync-based inpainting with multilingual support<br>
+            • Per-identity fine-tuning using ~1 minute of reference video<br>
+            • 0.5 seconds per video-second on an RTX 4090<br>
             • Deployed: <i>Lili</i> · <i>Yibao’er</i> · <i>Anzhen’er</i> · <i>Lu Xiao Zhai</i>
           </papertitle>
           <div class="project-links">
@@ -237,7 +247,7 @@
             <b>High-Fidelity Face Swapping for Virtual Idols</b><br><br>
             • Identity Compensation Network for fine-grained ID preservation<br>
             • StyleGAN-based FaceBlender for seamless color blending<br>
-            • Deployed on Douyin for virtual idol content <i>(Microsoft Xiaoice)</i>
+            • Deployed on Douyin for virtual-idol content at <i>Xiaoice, a Microsoft-incubated AI company</i>
           </papertitle>
           <a class="project-link" href="https://github.com/LeslieZhoa/HeadSwap">[Code]</a>
         </div>
@@ -275,9 +285,9 @@
         <div class="project-text-cell">
           <papertitle>
             <b>Unpaired Style Transfer for Real-Time Mobile Deployment</b><br><br>
-            • Inverse-StyleGAN pseudo-paired training (Disney / CG face)<br>
-            • Knowledge-distilled for real-time mobile inference<br>
-            • Triton deployment at 80 ms/frame <i>(BIGO Technology)</i>
+            • Pseudo-paired training through StyleGAN inversion (Disney / CG faces)<br>
+            • Knowledge distillation for real-time mobile inference<br>
+            • Deployed at <i>BIGO Technology</i>
           </papertitle>
           <a class="project-link" href="https://github.com/LeslieZhoa/DCT-NET.Pytorch">[Code]</a>
         </div>
